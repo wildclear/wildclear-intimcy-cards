@@ -21,7 +21,7 @@
         
         /* הגדרת משתנים לצבעים */
         :root {
-            --coral: #E68368;  /* הצבע שביקשת */
+            --coral: #E68368;
             --navy: #415E72;
             --gold: #E9C369;
             --teal: #36BA98;
@@ -34,6 +34,7 @@
             color: var(--navy);
             margin: 0;
             padding: 0;
+            text-align: center;
         }
 
         h1, h3 {
@@ -48,14 +49,14 @@
         .hero {
             text-align: center;
             padding: 2rem;
-            background-color: var(--coral);  /* צבע חדש לראש העמוד */
+            background-color: var(--coral);
             color: white;
-            position: relative;
         }
 
         .hero img {
             width: 100%;
             max-width: 600px;
+            height: auto;
             margin-top: 1rem;
         }
 
@@ -67,8 +68,6 @@
             max-width: 600px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative; /* ליצירת סדר שכבות */
-            z-index: 2; /* לוודא שהריבוע לא יוסתר */
         }
 
         .form-field {
@@ -110,27 +109,41 @@
             background-color: var(--gold);
         }
 
-        /* הסרת התמונה ברקע */
-        /* לא נוסיף כרגע רקע בתחתית */
+        /* הסתרת מלכודת הספאם */
+        div[aria-hidden="true"] {
+            display: none;
+        }
+
+        /* התאמות למובייל */
+        @media (max-width: 600px) {
+            .form-container {
+                width: 90%;
+                margin: 0 auto;
+                padding: 1.5rem;
+            }
+
+            .hero {
+                padding: 1.5rem;
+            }
+
+            .hero img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- החלק העליון של הדף -->
     <div class="hero">
         <h1>גלו מחדש את הקסם בזוגיות שלכם</h1>
         <p>30 קלפי שאלות מיוחדים ליום האהבה שיעזרו לכם להעמיק את האינטימיות והקרבה בזוגיות</p>
-        <img src="images/couple-sunset.jpg" alt="זוג צופה בשקיעה" class="couple-image">
+        <img src="images/couple-sunset.jpg" alt="זוג צופה בשקיעה">
     </div>
 
     <div class="content">
         <div class="form-container">
             <h3>להורדת הקלפים</h3>
-            <form action="https://gmail.us19.list-manage.com/subscribe/post?u=2c3bb274d66e9b71b67f6583e&amp;id=0d75dfb60a&amp;f_id=00e0c2e1f0" 
-                  method="post" 
-                  id="mc-embedded-subscribe-form" 
-                  name="mc-embedded-subscribe-form" 
-                  class="validate" 
-                  target="_blank">
+            <form action="https://gmail.us19.list-manage.com/subscribe/post?u=2c3bb274d66e9b71b67f6583e&amp;id=0d75dfb60a&amp;f_id=00e0c2e1f0" method="post" target="_blank">
                 <div class="form-field">
                     <label for="mce-MMERGE7">שם מלא *</label>
                     <input type="text" name="MMERGE7" id="mce-MMERGE7" required>
@@ -143,36 +156,9 @@
                     <input type="checkbox" id="consent" name="consent">
                     <label for="consent">אני מסכים/ה לקבל תוכן והצעות למייל</label>
                 </div>
-                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                    <input type="text" name="b_2c3bb274d66e9b71b67f6583e_0d75dfb60a" tabindex="-1" value="">
-                </div>
                 <button type="submit" class="cta-button">להורדת הקלפים</button>
             </form>
         </div>
-
-        <p style="font-size: 0.9rem; text-align: center; margin-top: 2rem;">* הקלפים פותחו בשיתוף עם מומחים מובילים בתחום הזוגיות והאינטימיות</p>
     </div>
-
-    <!-- הסקריפט של הורדת הקובץ -->
-    <script>
-        document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', (e) => {
-            // נחכה שניה אחת כדי לתת לטופס להישלח ל-MailChimp
-            setTimeout(() => {
-                // הקישור המעודכן להורדה מ-Google Drive
-                const driveUrl = 'https://drive.google.com/uc?export=download&id=1PYAR968hntZ-abmUKXLEPaRDuhaI365y';
-                
-                // יוצרים את קישור ההורדה
-                const downloadLink = document.createElement('a');
-                downloadLink.href = driveUrl;
-                downloadLink.download = 'קלפי_אינטימיות.pdf';
-                document.body.appendChild(downloadLink);
-                downloadLink.click();
-                document.body.removeChild(downloadLink);
-                
-                // מציגים הודעת אישור למשתמש
-                alert('תודה! הקלפים מתחילים להוריד. אם ההורדה לא מתחילה אוטומטית, לחץ על הקישור שנפתח.');
-            }, 1000);
-        });
-    </script>
 </body>
 </html>
