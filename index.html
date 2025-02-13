@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קלפי אינטימיות לזוגות - מתנה מיוחדת ליום האהבה</title>
+    <style>
+        /* הגדרת גופנים */
+        @font-face {
+            font-family: 'FbMatritsaExtraLight';
+            src: local('Fb Matritsa Extra Light');
+        }
+        @font-face {
+            font-family: 'FbMatritsaLight';
+            src: local('Fb Matritsa Light');
+        }
+        @font-face {
+            font-family: 'FtPilKaholRegular';
+            src: local('FtPilKahol regular');
+        }
+        
+        /* הגדרת משתנים לצבעים */
+        :root {
+            --coral: #E68368;  /* הצבע שביקשת */
+            --navy: #415E72;
+            --gold: #E9C369;
+            --teal: #36BA98;
+        }
+
+        /* סגנונות כלליים */
+        body {
+            font-family: 'FbMatritsaLight', sans-serif;
+            background-color: #f4f4f4;
+            color: var(--navy);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h3 {
+            color: var(--coral);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--coral);  /* צבע חדש לראש העמוד */
+            color: white;
+            position: relative;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 1rem;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* ליצירת סדר שכבות */
+            z-index: 2; /* לוודא שהריבוע לא יוסתר */
+        }
+
+        .form-field {
+            margin-bottom: 1rem;
+        }
+
+        .form-field label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-field input {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .checkbox-container {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background-color: var(--coral);
+            color: white;
+            font-size: 1.1rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--gold);
+        }
+
+        /* הסרת התמונה ברקע */
+        /* לא נוסיף כרגע רקע בתחתית */
+    </style>
+</head>
+<body>
+    <!-- החלק העליון של הדף -->
+    <div class="hero">
+        <h1>גלו מחדש את הקסם בזוגיות שלכם</h1>
+        <p>30 קלפי שאלות מיוחדים ליום האהבה שיעזרו לכם להעמיק את האינטימיות והקרבה בזוגיות</p>
+        <img src="images/couple-sunset.jpg" alt="זוג צופה בשקיעה" class="couple-image">
+    </div>
+
+    <div class="content">
+        <div class="form-container">
+            <h3>להורדת הקלפים</h3>
+            <form action="https://gmail.us19.list-manage.com/subscribe/post?u=2c3bb274d66e9b71b67f6583e&amp;id=0d75dfb60a&amp;f_id=00e0c2e1f0" 
+                  method="post" 
+                  id="mc-embedded-subscribe-form" 
+                  name="mc-embedded-subscribe-form" 
+                  class="validate" 
+                  target="_blank">
+                <div class="form-field">
+                    <label for="mce-MMERGE7">שם מלא *</label>
+                    <input type="text" name="MMERGE7" id="mce-MMERGE7" required>
+                </div>
+                <div class="form-field">
+                    <label for="mce-EMAIL">כתובת מייל *</label>
+                    <input type="email" name="EMAIL" id="mce-EMAIL" required>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="consent" name="consent">
+                    <label for="consent">אני מסכים/ה לקבל תוכן והצעות למייל</label>
+                </div>
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_2c3bb274d66e9b71b67f6583e_0d75dfb60a" tabindex="-1" value="">
+                </div>
+                <button type="submit" class="cta-button">להורדת הקלפים</button>
+            </form>
+        </div>
+
+        <p style="font-size: 0.9rem; text-align: center; margin-top: 2rem;">* הקלפים פותחו בשיתוף עם מומחים מובילים בתחום הזוגיות והאינטימיות</p>
+    </div>
+
+    <!-- הסקריפט של הורדת הקובץ -->
+    <script>
+        document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', (e) => {
+            // נחכה שניה אחת כדי לתת לטופס להישלח ל-MailChimp
+            setTimeout(() => {
+                // הקישור המעודכן להורדה מ-Google Drive
+                const driveUrl = 'https://drive.google.com/uc?export=download&id=1PYAR968hntZ-abmUKXLEPaRDuhaI365y';
+                
+                // יוצרים את קישור ההורדה
+                const downloadLink = document.createElement('a');
+                downloadLink.href = driveUrl;
+                downloadLink.download = 'קלפי_אינטימיות.pdf';
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // מציגים הודעת אישור למשתמש
+                alert('תודה! הקלפים מתחילים להוריד. אם ההורדה לא מתחילה אוטומטית, לחץ על הקישור שנפתח.');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
